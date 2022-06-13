@@ -1,5 +1,5 @@
-import * as React from 'react'
-import * as ReactDOM from 'react-dom'
+import React from 'react'
+import { render } from 'react-dom'
 import { Example } from './scroll.example'
 
 const App = () => {
@@ -10,4 +10,4 @@ const App = () => {
   )
 }
 
-ReactDOM.render(<App />, document.getElementById('root'))
+render(<App />, document.getElementById('root')!)

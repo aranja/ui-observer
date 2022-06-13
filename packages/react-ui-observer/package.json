@@ -48,8 +48,8 @@
   ],
   "devDependencies": {
     "@size-limit/preset-small-lib": "^7.0.8",
-    "@types/react": "^18.0.9",
-    "@types/react-dom": "^18.0.4",
+    "@types/react": "^18.0.12",
+    "@types/react-dom": "^18.0.5",
     "husky": "^8.0.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",

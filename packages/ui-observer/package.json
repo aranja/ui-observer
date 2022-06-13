@@ -44,6 +44,7 @@
   ],
   "devDependencies": {
     "@size-limit/preset-small-lib": "^7.0.8",
+    "@types/node": "^17.0.42",
     "husky": "^8.0.1",
     "size-limit": "^7.0.8",
     "tsdx": "^0.14.1",
@@ -54,6 +55,8 @@
     "fastdom": "^1.0.8"
   },
   "jest": {
-    "setupFiles": ["./test/raf.ts"]
+    "setupFiles": [
+      "./test/raf.ts"
+    ]
   }
 }
