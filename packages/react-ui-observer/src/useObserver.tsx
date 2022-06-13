@@ -24,9 +24,9 @@ export const useObserver = (
     debug,
     rootElementRef,
     onChange,
-  }: ObserverOptions = {}
+  }: ObserverOptions = {},
+  deps?: any[]
 ): unknown => {
-  const rootElement = rootElementRef?.current
   const [state, setState] = useState<unknown | null>(defaultValue)
   const observer = useRef<BaseObserver | null>(null)
   const onChangeRef = useRef<undefined | ((state: unknown) => void)>(onChange)
@@ -63,7 +63,6 @@ export const useObserver = (
     }
   }, [observer])
 
-  // React to value, context and ref changes.
   useMemo(() => {
     if (observer.current) {
       // Update Observer with new context and value.
@@ -73,7 +72,7 @@ export const useObserver = (
       }
       observer.current.update(value)
     }
-  }, [observer, value, context, rootElement])
+  }, deps || [value, context])
 
   return state
 }
