@@ -50,7 +50,7 @@ export const useObserver = (
       onChange: onValueChange,
       debug,
       context: {
-        rootElement,
+        rootElement: rootElementRef?.current,
         ...context,
       },
     })
@@ -67,7 +67,7 @@ export const useObserver = (
     if (observer.current) {
       // Update Observer with new context and value.
       observer.current.context = {
-        rootElement,
+        rootElement: rootElementRef?.current,
         ...context,
       }
       observer.current.update(value)
