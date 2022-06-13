@@ -32,14 +32,14 @@ export const useObserver = (
   const onChangeRef = useRef<undefined | ((state: unknown) => void)>(onChange)
   onChangeRef.current = onChange
 
-  // Handle value updates by calling onChange and triggering re-render.
+  // Handle value updates by calling onChange and/or triggering re-render.
   const onValueChange = useCallback(
     (state: unknown) => {
       if (onChangeRef.current) {
         onChangeRef.current(state)
+      } else {
+        setState(state)
       }
-
-      setState(state)
     },
     [setState, onChangeRef]
   )
